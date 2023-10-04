@@ -25,30 +25,28 @@ const handleLoadNews = async (categoryId) => {
         div.innerHTML = `
         <div class="card w-96 bg-base-100">
             <figure>
-                <img src=${news.image_url}>
+                <img src=${news?.image_url}>
             </figure>
             <div class="card-body">
                 <h2 class="card-title">
-                    Biden Pledges Nearly $3 Billion to Ukraine
-                    <div class="badge badge-secondary p-5">Excellent</div>
+                    ${news.title.slice(0,40)}
+                    <div class="badge badge-secondary p-5">${news.rating.badge}</div>
                 </h2>
                 <p>
-                    wednesday, August 24, 2022. Tag Cloud tags: Biden,
-                    EU, EURO,
-                    Europe
+                ${news?.details.slice(0,50)}
                 </p>
                 <div class="card-footer flex justify-between mt-8">
                     <div class="flex">
                         <div>
                             <div class="avartar-online">
                                 <div class="w-14 rounded-full">
-                                    <img src="" alt="">
+                                    <img src=${news.author.img}>
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <h6>Jimmy Dane</h6>
-                            <small>2023-09-25 14:25:33</small>
+                            <h6>${news.author.name}</h6>
+                            <small>${news.author.published_date}</small>
                         </div>
                     </div>
                     <div class="card-detaild-btn">
